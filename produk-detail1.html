@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Produk - RB Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f8f8f8;
+            padding: 15px 50px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .header .menu {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        .header .menu li a {
+            text-decoration: none;
+            font-size: 16px;
+            color: #333;
+            transition: color 0.3s;
+        }
+        .header .menu li a:hover {
+            color: #007BFF;
+        }
+        .product-detail {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex: 1;
+        }
+        .carousel {
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel-images {
+            display: flex;
+            transition: transform 1s ease;
+        }
+        .carousel-images img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+        .product-detail h1 {
+            font-size: 36px;
+            margin: 20px 0;
+        }
+        .product-detail p {
+            font-size: 18px;
+            color: #777;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        .back-btn {
+            display: inline-block;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .back-btn:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            text-align: center;
+            background-color: #f8f8f8;
+            padding: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Sarung Mabar</div>
+        <ul class="menu">
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Sign In</a></li>
+            <li><a href="#">Tentang Kami</a></li>
+        </ul>
+    </header>
+
+    <section class="product-detail">
+        <div class="carousel">
+            <div class="carousel-images">
+                <!-- Masukkan URL gambar lokal di sini -->
+                <img src="sarung 1.jpeg" alt="sarung 1">
+                <img src="sarung 2.jpeg" alt="sarung 1">
+                <img src="sarung 4.jpeg" alt="sarung 1">
+            </div>
+        </div>
+        <h1>Sarung Motif sultan pintu aceh</h1>
+        <p>Motif Pintu Aceh memiliki beberapa makna, di antaranya:
+            Sifat orang Aceh
+            Motif ini menggambarkan sifat orang Aceh yang tidak terlalu terbuka pada orang baru, namun bisa menganggap orang baru itu sebagai saudara jika sudah akrab. 
+            Rendah hati dan lapang dada
+            Motif ini melambangkan sifat rendah hati dan lapang dada. 
+            </p>
+        <p>Keterbukaan masyarakat Aceh
+            Motif ini menggambarkan keterbukaan masyarakat Aceh yang dapat menyatu dengan berbagai bangsa di dunia, asalkan tidak diganggu Akidahnya. 
+            Simbol kebanggaan
+            Motif ini merupakan simbol kebanggaan masyarakat Aceh yang mencerminkan kekayaan budaya dan seni tradisional mereka. 
+            Identitas budaya
+            Motif ini merupakan bagian dari identitas budaya Aceh yang unik dan membedakannya dari motif ukiran dari daerah lain di Indonesiai.</p>
+        <a href="index.html" class="back-btn">Kembali ke Beranda</a>
+    </section>
+
+    <footer class="footer">
+        &copy; 2024 Bakul Sayur. Semua Hak Dilindungi.
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.carousel-images img');
+        const totalImages = images.length;
+
+        function changeImage() {
+            currentIndex = (currentIndex + 1) % totalImages;
+            document.querySelector('.carousel-images').style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        setInterval(changeImage, 3000); // Ganti gambar setiap 3 detik
+    </script>
+</body>
+</html>
